@@ -6,10 +6,7 @@ import com.github.jntakpe.bfbdemo.domain.Gare;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Implémentation du JDK6
@@ -39,6 +36,25 @@ public class Jdk6GareService implements GareService {
 
     @Override
     public List<Map.Entry<Short, Long>> sortGareByZone() throws IOException {
-        return null;
+        Set<Gare> gares = loadFromCsv();
+        Map<Short, Long> mapZoneNb = new TreeMap<Short, Long>();
+        for (Gare gare : gares) {
+            Short codeNavigo = gare.getCodeNavigo();
+            if (mapZoneNb.get(codeNavigo) == null) {
+                mapZoneNb.put(codeNavigo, 1L);
+            } else {
+                Long incrementedNb = mapZoneNb.get(codeNavigo);
+                incrementedNb++;
+                mapZoneNb.put(codeNavigo, incrementedNb);
+            }
+        }
+
+        List<Map.Entry<Short, Long>> list = new ArrayList<Map.Entry<Short, Long>>(mapZoneNb.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Short,Long>>() {
+            @Override public int compare(Map.Entry<Short,Long> gare1, Map.Entry<Short,Long> gare2) {
+                return gare2.getValue().compareTo(gare1.getValue());
+            }
+        });
+        return list;
     }
 }

@@ -22,5 +22,6 @@ public class BFBDemo {
     public static void main(String[] args) throws IOException {
         GareService jdk6GareService = new Jdk6GareService();
         System.out.println("NB JDK6 Gares : " + jdk6GareService.loadFromCsv().size());
+        System.out.println("JDK 6 classement zones : " + jdk6GareService.sortGareByZone());
     }
 }
