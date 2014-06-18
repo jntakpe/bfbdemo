@@ -26,5 +26,6 @@ public class BFBDemo {
         System.out.println("NB JDK6 Gares : " + jdk6GareService.loadFromCsv().size());
         System.out.println("NB JDK8 Gares : " + jdk8GareService.loadFromCsv().size());
         System.out.println("JDK 6 classement zones : " + jdk6GareService.sortGareByZone());
+        System.out.println("JDK 8 classement zones : " + jdk8GareService.sortGareByZone());
     }
 }

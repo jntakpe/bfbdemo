@@ -6,6 +6,7 @@ import com.github.jntakpe.bfbdemo.domain.Gare;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -28,6 +29,11 @@ public class Jdk8GareService implements GareService {
 
     @Override
     public List<Map.Entry<Short, Long>> sortGareByZone() throws IOException {
-        return null;
+        return loadFromCsv().stream().collect(
+                Collectors.groupingBy(
+                        Gare::getCodeNavigo,
+                        Collectors.counting()
+                )
+        ).entrySet().stream().sorted(Comparator.comparing(entry -> -entry.getValue())).collect(Collectors.toList());
     }
 }
