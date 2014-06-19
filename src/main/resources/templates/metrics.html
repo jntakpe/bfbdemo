@@ -3,11 +3,34 @@
       layout:decorator="layout/default"
       th:with="title='Métriques'">
 <body>
-<div layout:fragment="content">
-    <h1>Métriques avec template par défaut</h1>
-</div>
-<script type="text/javascript" layout:fragment="script">
+<div layout:fragment="content" ng-app="metricsApp">
+    <h1>Métriques</h1>
 
-</script>
+    <div ng-controller="metricsCtrl">
+        <div>
+            <p>
+                {{metrics}}
+            </p>
+        </div>
+        <h1>Environnement</h1>
+        <div>
+            <p>
+                {{env}}
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript" layout:fragment="script">
+        var metricsApp = angular.module('metricsApp', []);
+        metricsApp.controller('metricsCtrl', function ($scope, $http) {
+            $http.get('/bfbdemo/metrics').success(function (metrics) {
+                $scope.metrics = metrics;
+            });
+
+            $http.get('/bfbdemo/env').success(function (env) {
+                $scope.env = env;
+            });
+        });
+    </script>
+</div>
 </body>
 </html>

@@ -14,4 +14,9 @@ spring:
   thymeleaf:
     cache: false
   management:
-    contextPath: /metrics
+      contextPath: /metrics
+  endpoints:
+    info:
+      enabled: true
+      app:
+        version: V1.0.0
