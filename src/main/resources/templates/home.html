@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="fr">
+<!-- head -->
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="jntakpe" name="author"/>
+
+    <!-- Title -->
+    <title>Démo BforBank</title>
+
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/unify.css"/>
+    <link rel="stylesheet" href="css/unify-theme.css"/>
+    <link rel="stylesheet" href="css/demobfb.css"/>
+</head>
+<body>
+<!-- header -->
+<header class="header">
+    <!-- topbar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="col-md-offset-4 col-md-2 title-bar">
+                <a th:href="@{/}">Démo BforBank</a>
+            </div>
+            <ul class="loginbar pull-right">
+                <li>
+                    <i class="fa fa-user"></i>
+                    <a>admin</a>
+                </li>
+                <li class="topbar-devider"></li>
+                <li id="user-auth">
+                    <i class="fa fa-users"></i>
+                    <a>
+                        <span>Administrateur</span>
+                    </a>
+
+                </li>
+                <li class="topbar-devider"></li>
+                <li>
+                    <i class="fa fa-sign-out"></i>
+                    <a href="/pp/logout">Déconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- navigation -->
+    <div role="navigation" class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button data-target=".navbar-responsive-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <a href="" class="navbar-brand">
+                    <img src="img/logo_bforbank.svg" alt="Logo" id="logo-brand"/>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a th:href="@{/}"><i class="fa fa-home"></i> <span>Accueil</span></a>
+                    </li>
+                    <li>
+                        <a th:href="@{/hazelcast}"><i class="fa fa-cubes"></i> <span>Hazelcast</span></a>
+                    </li>
+                    <li>
+                        <a th:href="@{/admin}"><i class="fa fa-dashboard"></i> <span>Métriques</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- breadcrumbs -->
+<div class="breadcrumbs">
+    <!-- Home -->
+    <div class="container">
+        <h1 class="pull-left">Accueil</h1>
+        <ul class="pull-right breadcrumb">
+            <li class="active">Accueil</li>
+        </ul>
+    </div>
+</div>
+<!-- Contenu de la page -->
+<div class="container">
+    <ul class="timeline-v1">
+        <li>
+            <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
+            <div class="timeline-panel">
+                <div class="timeline-body text-justify">
+                    <h2>Page d'accueil Thymeleaf</h2>
+
+                    <p>Simple page html pouvant être utilisée avec ou sans Thymeleaf</p>
+                </div>
+                <div class="timeline-footer">
+                    <h4><i class="fa fa-git"></i> : <span class="col-md-offset-1">git clone test -f</span></h4>
+                </div>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-badge primary"><i class="glyphicon glyphicon-record invert"></i></div>
+            <div class="timeline-panel">
+                <div class="timeline-body text-justify">
+                    <h2><a href="#">Timeline Heading</a></h2>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+                        type specimen book.</p>
+                    <a href="#" class="btn-u btn-u-sm">Read More</a>
+                </div>
+                <div class="timeline-footer">
+                    <ul class="list-unstyled list-inline blog-info">
+                        <li><i class="fa fa-clock-o"></i> March 16, 2014</li>
+                        <li><i class="fa fa-comments-o"></i> <a href="#">12 Comments</a></li>
+                    </ul>
+                    <a href="#" class="likes"><i class="fa fa-heart"></i>87</a>
+                </div>
+            </div>
+        </li>
+
+        <li style="float: none;" class="clearfix"></li>
+    </ul>
+</div>
+<!-- Footer -->
+<footer class="navbar navbar-default navbar-fixed-bottom copyright">
+    <div class="container">
+        <div class="col-md-6">
+            <p class="copyright-space">
+                <span>Démo BforBank</span> | <span>V1.0</span> | <span>Step </span>
+            </p>
+        </div>
+        <div class="col-md-2 pull-right">
+            <ul class="social-icons">
+                <li><a class="social_github" data-original-title="Github" href="https://github.com/jntakpe"></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
