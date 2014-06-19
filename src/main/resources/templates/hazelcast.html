@@ -34,7 +34,28 @@
     <div class="row" ng-controller="garesCtrl">
         <div class="col-md-6">
             <div class="headline"><h2>Contenu du cache</h2></div>
-
+            <table class="table table-condensed table-stripped">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Ville</th>
+                    <th>Zone</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="gare in gares">
+                <tr>
+                    <td>
+                        {{gare.nom}}
+                    </td>
+                    <td>
+                        {{gare.ville}}
+                    </td>
+                    <td>
+                        {{gare.codeNavigo}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col-md-6">
             <div class="headline margin-bottom-60"><h2>Opérations</h2></div>

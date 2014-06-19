@@ -2,6 +2,7 @@ package com.github.jntakpe.bfbdemo.service;
 
 import com.github.jntakpe.bfbdemo.BFBDemo;
 import com.github.jntakpe.bfbdemo.domain.Gare;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
  *
  * @author jntakpe
  */
+@Service
 public class Jdk8GareService implements GareService {
 
     @Override

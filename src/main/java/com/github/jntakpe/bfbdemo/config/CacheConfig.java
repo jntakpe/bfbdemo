@@ -28,6 +28,8 @@ public class CacheConfig {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+    public static final String GARE_CACHE = "gareCache";
+
     private static HazelcastInstance hazelcastInstance;
 
     @Bean
@@ -50,7 +52,7 @@ public class CacheConfig {
         log.info("Demarrage du CacheManager Hazelcast");
         Config config = new Config();
         config.setInstanceName("demobfb");
-        config.getMapConfigs().put("gareCache", initializeDefaultMapConfig());
+        config.getMapConfigs().put(GARE_CACHE, initializeDefaultMapConfig());
         hazelcastInstance = HazelcastInstanceFactory.newHazelcastInstance(config);
         return hazelcastInstance;
     }
