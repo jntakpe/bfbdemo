@@ -1,7 +1,7 @@
 var hzApp = angular.module('hzApp', []), contextGares = '/bfbdemo/gare';
 
 hzApp.controller('hzCtrl', function ($scope, $http) {
-    $http.get('/demobfb/hazelcast/cluster').success(function (data) {
+    $http.get('/bfbdemo/hazelcast/cluster').success(function (data) {
         $scope.hzNodes = data;
     });
 });

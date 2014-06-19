@@ -9,9 +9,27 @@
 <div th:replace="/fragments/titlebars :: breadcrumb"></div>
 <!-- contenu de la page -->
 <div class="container" ng-app="hzApp">
-    <div class="row">
+    <div class="row" ng-controller="hzCtrl">
         <div class="headline"><h2><i class="fa fa-sitemap"></i> Noeuds Hazelcast</h2></div>
+        <div ng-repeat="hzNode in hzNodes">
+            <div class="col-md-3">
+                <div class="pricing hover-effect">
+                    <div class="pricing-head">
+                        <h3 ng-if="hzNode.local" class="local"><i class="fa fa-laptop"></i> <span>Local</span></h3>
 
+                        <h3 ng-if="!hzNode.local"><i class="fa fa-laptop"></i> <span>Distant</span></h3>
+                    </div>
+                    <ul class="pricing-content list-unstyled">
+                        <li>
+                            url : {{hzNode.host}}
+                        </li>
+                        <li>
+                            port : {{hzNode.port}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row" ng-controller="garesCtrl">
         <div class="col-md-6">
