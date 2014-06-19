@@ -1,0 +1,17 @@
+server:
+  context-path: /bfbdemo
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bfbdemo
+    username: postgres
+    password: sopra*
+    driverClassName: org.postgresql.Driver
+  jpa:
+    openInView: false
+    generate-ddl: true
+    show-sql: true
+  thymeleaf:
+    cache: false
+  management:
+    contextPath: /metrics
