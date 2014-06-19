@@ -11,8 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.interceptor.KeyGenerator;
-import org.springframework.cache.interceptor.SimpleKeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -35,11 +33,6 @@ public class CacheConfig {
     @Bean
     public CacheManager cacheManager() {
         return new HazelcastCacheManager(hazelcastInstance);
-    }
-
-    @Bean
-    public KeyGenerator keyGenerator() {
-        return new SimpleKeyGenerator();
     }
 
     public static HazelcastInstance getHazelcastInstance() {
