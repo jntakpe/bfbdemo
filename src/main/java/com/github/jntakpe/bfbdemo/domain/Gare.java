@@ -1,5 +1,9 @@
 package com.github.jntakpe.bfbdemo.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -7,7 +11,12 @@ import java.io.Serializable;
  *
  * @author jntakpe
  */
+@Entity
 public class Gare implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String nom;
 
@@ -22,6 +31,14 @@ public class Gare implements Serializable {
         this.nom = nom;
         this.ville = ville;
         this.codeNavigo = codeNavigo;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNom() {
