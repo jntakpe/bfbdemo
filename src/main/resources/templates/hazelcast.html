@@ -8,12 +8,12 @@
 <!-- titlebar -->
 <div th:replace="/fragments/titlebars :: breadcrumb"></div>
 <!-- contenu de la page -->
-<div class="container">
+<div class="container" ng-app="hzApp">
     <div class="row">
         <div class="headline"><h2><i class="fa fa-sitemap"></i> Noeuds Hazelcast</h2></div>
 
     </div>
-    <div class="row">
+    <div class="row" ng-controller="garesCtrl">
         <div class="col-md-6">
             <div class="headline"><h2>Contenu du cache</h2></div>
 
@@ -22,19 +22,19 @@
             <div class="headline margin-bottom-60"><h2>Opérations</h2></div>
             <div class="col-md-offset-2">
                 <div class="row">
-                    <div class="col-md-3">
-                        <button class="pull-right btn btn-lg">
+                    <div class="col-md-4">
+                        <button class="btn btn-lg" ng-click="garesRefresh()">
                             <i class="fa fa-refresh"></i> Refresh
                         </button>
                     </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-info btn-lg">
+                    <div class="col-md-4">
+                        <button class="btn btn-info btn-lg" ng-click="garesClean()">
                             <i class="fa fa-eraser"></i> Clean
                         </button>
                     </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-danger btn-lg">
-                            <i class="fa fa-upload"></i> Upload
+                    <div class="col-md-4">
+                        <button class="btn btn-danger btn-lg" ng-click="garesLoad()">
+                            <i class="fa fa-upload"></i> Load
                         </button>
                     </div>
                 </div>
@@ -46,5 +46,6 @@
 <footer th:replace="/fragments/footers :: footer"></footer>
 <!-- scripts -->
 <div th:replace="/fragments/jslibs :: libs"></div>
+<script th:src="@{/js/hzApp.js}"></script>
 </body>
 </html>
