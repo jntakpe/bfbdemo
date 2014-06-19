@@ -1,7 +1,6 @@
 package com.github.jntakpe.bfbdemo.config;
 
 import com.hazelcast.config.Config;
-import com.hazelcast.config.ManagementCenterConfig;
 import com.hazelcast.config.MapConfig;
 import com.hazelcast.config.MaxSizeConfig;
 import com.hazelcast.core.Hazelcast;
@@ -54,10 +53,6 @@ public class CacheConfig {
         Config config = new Config();
         config.setInstanceName("demobfb");
         config.getMapConfigs().put(GARE_CACHE, initializeDefaultMapConfig());
-        ManagementCenterConfig managementCenterConfig = new ManagementCenterConfig();
-        managementCenterConfig.setUrl("http://localhost:9080/mancenter");
-        managementCenterConfig.setEnabled(true);
-        config.setManagementCenterConfig(managementCenterConfig);
         hazelcastInstance = HazelcastInstanceFactory.newHazelcastInstance(config);
         return hazelcastInstance;
     }
@@ -70,7 +65,7 @@ public class CacheConfig {
             then all entries of the map will be copied to another JVM for
             fail-safety. Valid numbers are 0 (no backup), 1, 2, 3.
          */
-        mapConfig.setBackupCount(0);
+        mapConfig.setBackupCount(1);
 
         /*
             Valid values are:
