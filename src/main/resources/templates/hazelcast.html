@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="fr">
+<!-- head -->
+<head th:replace="/fragments/heads :: head"></head>
+<body th:with="title='Hazelcast'">
+<!-- header -->
+<header th:replace="/fragments/headers :: header"></header>
+<!-- titlebar -->
+<div th:replace="/fragments/titlebars :: breadcrumb"></div>
+<!-- contenu de la page -->
+<div class="container">
+    <div class="row">
+        <div class="headline"><h2><i class="fa fa-sitemap"></i> Noeuds Hazelcast</h2></div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="headline"><h2>Contenu du cache</h2></div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="headline margin-bottom-60"><h2>Opérations</h2></div>
+            <div class="col-md-offset-2">
+                <div class="row">
+                    <div class="col-md-3">
+                        <button class="pull-right btn btn-lg">
+                            <i class="fa fa-refresh"></i> Refresh
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-info btn-lg">
+                            <i class="fa fa-eraser"></i> Clean
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-danger btn-lg">
+                            <i class="fa fa-upload"></i> Upload
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<footer th:replace="/fragments/footers :: footer"></footer>
+<!-- scripts -->
+<div th:replace="/fragments/jslibs :: libs"></div>
+</body>
+</html>
